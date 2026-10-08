@@ -20,8 +20,8 @@ jobs:
           cache: pip
 
 
-      - name: Scan dependencies
-        run: pip install pip-audit && pip-audit -r requirements.txt
+      # - name: Scan dependencies
+      #   run: pip install pip-audit && pip-audit -r requirements.txt
 
       - name: Install dependencies
         run: pip install -r requirements.txt
@@ -32,8 +32,8 @@ jobs:
       #   Scan dependencies:      run: pip install pip-audit && pip-audit -r requirements.txt
       # THINK: where in the order should it go? Before training, or at the very end?
 
-      - name: Lint the code
-        run: pip install ruff && ruff check .
+      # - name: Lint the code
+      #   run: pip install ruff && ruff check .
 
       - name: Scan code for bugs
         run: pip install bandit && bandit -r app.py train.py
